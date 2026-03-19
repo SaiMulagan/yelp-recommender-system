@@ -1,0 +1,8 @@
+numpy==1.26.4
+pandas==2.2.3
+scikit-surprise==1.1.4
+fastapi>=0.116,<0.118
+uvicorn[standard]>=0.37,<0.41
+pymongo>=4.6,<5
+google-cloud-storage
+python-dotenv

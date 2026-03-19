@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yelp_app
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      DB_NAME: ${DB_NAME}
+    ports:
+      - "8000:8080"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yelp_app
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/
+      DB_NAME: yelp_db
+    ports:
+      - "8000:8080"
+
+volumes:
+  mongo_data:
